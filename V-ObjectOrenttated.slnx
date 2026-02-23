@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="V-ObjectOrenttated/V-ObjectOrenttated.vcxproj" />
+  <Project Path="V-ObjectOrenttated/V-ObjectOrenttated.vcxproj" Id="c69dbd05-32b1-4646-b616-3518222104a4" />
 </Solution>
