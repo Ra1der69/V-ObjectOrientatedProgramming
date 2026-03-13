@@ -1,52 +1,79 @@
-// V-ObjectOrenttated.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+// V-ObjectOrenttated.cpp
 #include <iostream>
 #include <string>
+#include <limits>
+#include "Book.h"
 
-using namespace std; 
+using namespace std;
+
+ 
 
 string Response;
-string Book;
+string UserSearch;
 string USERNAME;
-float DOB;
+int DOB;
 string PASSWORD;
 
-bool isAvalible = true;
-bool isUnAvalible = false;
+//bool isAvalible = true;
+//bool isUnAvalible = false;
 
 
 
 
-int main()
+int main() 
 {
     cout << " log in using your USERNAME and DOB\n";
-    
 
-    cout << "USERNAME: "; cin >> USERNAME; 
-    cout << "DOB: ";  cin >> DOB; 
-    cout << "PASSWORD: ";  cin >> PASSWORD;
-    cout << endl;
-    cout << "USERNAME:" << USERNAME << "\n"; 
-    cout << "D0B:" << DOB << "\n"; 
-    cout << "PASSWORD: " << "********* \n";
-    
-    cout << "thank you for logging in\n would you like to rent a book? (YES or NO) \n " ;
-    cin >> Response;
+    cout << "USERNAME: "; cin >> USERNAME;
 
-    if (Response == "yes")
-    {
-        cout << "what book would you like to rent? \n";
+    cout << "DOB (DDMMYYYY): "; cin >> DOB;
 
-        cin >> Book ;
+    //while (!(cin >> DOB)) {
+      //  cout << "invalid input. input numbers for DOB ";
+        //cin.clear();
 
-        cout << "searching if "; cout << Book << " is avalible\n";
+        //cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    //}
+        cout << "PASSWORD: ";  cin >> PASSWORD;
+
+        cout << "USERNAME:" << USERNAME << "\n";
+
+
+        cout << "D0B:"; cin >> DOB; cout << DOB << "\n";
+
+        cout << "PASSWORD: " << "********* \n";
+
+
+
+        cout << "Thank you "; cout << USERNAME;  cout << "for logging in\nWould you like to rent a book ? (YES or NO) \n ";
+        cin >> Response;
+
+        if (Response == "yes" || Response == "YES")
+        {
+            cout << "What book would you like to rent? \n";
+            cin >> UserSearch;
+
+            // cin >> UserBookSearch;
+
+            bool found = false;
+            for (int i = 0; i < 3; i++) {
+                if (library[i].Title == UserSearch) {
+                    cout << "foundand sent" << endl;
+                    found = true;
+                }
+
+                //cin >> Book;
+
+                //cout << "searching if "; cout << Book << " is avalible\n";
+            }
+            if (!found) {
+                cout << "sorry book not found" << endl;
+            }
+
+            //else {
+              //  cout << "try again" << endl;
+            //}
+        }
+
+
     }
-
-    else {
-        cout << "try again" << endl;
-    }
-
-
-
-}
